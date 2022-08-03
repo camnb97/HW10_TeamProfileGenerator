@@ -9,60 +9,16 @@ const Manager = require("./lib/Manager");
 //const for a file that has generate html
 
 let managerInfo = [];
-//what type of array is returned when info is pushed in here
 let engineerInfo = [];
 let internInfo = [];
-//need javascript for github and email clicks working on the generated html file
-//use a for loop to create a card for each person and add the card as a variable?... same thing for weather api homework
-//
+
 
 //writes the html file
 const generateHTML = (managerInfo, engineerInfo, internInfo) => {
-    //let engineer = engineerInfo.map .. return a teplate literal for each engineer, then join together ith .join
-    // map makes it so the info for ALL the enginner/interns are included 
-    let manager = managerInfo.map((element) => {
-        return `<div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">${manager.mName}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Role: Manager</h6>
-              <h6 class="card-subtitle mb-2 text-muted">ID Number: ${manager.mId}</h6>
-              <h6 class="card-subtitle mb-2 text-muted">Office Number: ${manager.officeNum}</h6>
-              <a href="#" class="card-link">${manager.mEmail}</a>
-            </div>
-        </div>
-    </div>`
-    });
 
-
-    let engineer = engineerInfo.map((element) => {
-        return `<div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">${eName}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Role: Engineer</h6>
-              <h6 class="card-subtitle mb-2 text-muted">ID Number: ${eId}</h6>
-              <a href="#" class="card-link">${eEmail}</a>
-              <a href="#" class="card-link">${eGithub}</a>
-            </div>
-        </div>
-    </div>`
-    });
-
-
-    let intern = internInfo.map((element) => {
-        return `<div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">${internName}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Role: Intern</h6>
-              <h6 class="card-subtitle mb-2 text-muted">ID Number: ${internId}</h6>
-              <a href="#" class="card-link">${internEmail}</a>
-              <a href="#" class="card-link">${internSchool}</a>
-            </div>
-        </div>
-    </div>`
-    })
+    let manager = managerInfo.map;
+    let engineer = engineerInfo.map;
+    let intern = internInfo.map;
 
     return `<!DOCTYPE html>
     <html>
@@ -84,33 +40,33 @@ const generateHTML = (managerInfo, engineerInfo, internInfo) => {
             <div>
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                      <h5 class="card-title">${mName}</h5>
+                      <h5 class="card-title">${manager.mName}</h5>
                       <h6 class="card-subtitle mb-2 text-muted">Role: Manager</h6>
-                      <h6 class="card-subtitle mb-2 text-muted">ID Number: ${mId}</h6>
-                      <h6 class="card-subtitle mb-2 text-muted">Office Number: ${officeNum}</h6>
-                      <a href="#" class="card-link">${mEmail}</a>
+                      <h6 class="card-subtitle mb-2 text-muted">ID Number: ${manager.mId}</h6>
+                      <h6 class="card-subtitle mb-2 text-muted">Office Number: ${manager.officeNum}</h6>
+                      <a href="#" class="card-link">${manager.mEmail}</a>
                     </div>
                 </div>
             </div>
             <div>
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                      <h5 class="card-title">${eName}</h5>
+                      <h5 class="card-title">${engineer.eName}</h5>
                       <h6 class="card-subtitle mb-2 text-muted">Role: Engineer</h6>
-                      <h6 class="card-subtitle mb-2 text-muted">ID Number: ${eId}</h6>
-                      <a href="#" class="card-link">${eEmail}</a>
-                      <a href="#" class="card-link">${eGithub}</a>
+                      <h6 class="card-subtitle mb-2 text-muted">ID Number: ${engineer.eId}</h6>
+                      <a href="#" class="card-link">${engineer.eEmail}</a>
+                      <a href="#" class="card-link">${engineer.eGithub}</a>
                     </div>
                 </div>
             </div>
             <div>
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                      <h5 class="card-title">${internName}</h5>
+                      <h5 class="card-title">${intern.internName}</h5>
                       <h6 class="card-subtitle mb-2 text-muted">Role: Intern</h6>
-                      <h6 class="card-subtitle mb-2 text-muted">ID Number: ${internId}</h6>
-                      <a href="#" class="card-link">${internEmail}</a>
-                      <a href="#" class="card-link">${internSchool}</a>
+                      <h6 class="card-subtitle mb-2 text-muted">ID Number: ${intern.internId}</h6>
+                      <a href="#" class="card-link">${intern.internEmail}</a>
+                      <a href="#" class="card-link">${intern.internSchool}</a>
                     </div>
                 </div>
             </div>
@@ -214,17 +170,18 @@ function menu() {
                     menu();
                 })
             } else {
-                console.log(ManagerInfo);
+                console.log(managerInfo);
                 console.log(engineerInfo);
                 console.log(internInfo);
                 const htmlContent = generateHTML(managerInfo, engineerInfo, internInfo);
-                fs.writeFile("./output/index.html", htmlContent, (err) =>
+                fs.writeFile("./dist/output.html", htmlContent, (err) =>
                     err ? console.log(err) : console.log("succesfully created HTML")
                 );
             }
         });
 }
 
+menu()
 
 
 
