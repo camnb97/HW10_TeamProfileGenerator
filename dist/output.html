@@ -1,0 +1,54 @@
+<!--rendered html from the index.js file-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">My Team</h1>
+              <p class="lead">Here you will see your  complete team, along with some important info about each person.</p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">${mName}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Role: Manager</h6>
+                  <h6 class="card-subtitle mb-2 text-muted">ID Number: ${mId}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted">Office Number: ${officeNum}</h6>
+                  <a href="#" class="card-link">${mEAddress}</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">${eName}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Role: Engineer</h6>
+                  <h6 class="card-subtitle mb-2 text-muted">ID Number: ${eId}</h6>
+                  <a href="#" class="card-link">${eEmail}</a>
+                  <a href="#" class="card-link">${eGithub}</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">${internName}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Role: Intern</h6>
+                  <h6 class="card-subtitle mb-2 text-muted">ID Number: ${internId}</h6>
+                  <a href="#" class="card-link">${internEmail}</a>
+                  <a href="#" class="card-link">${internSchool}</a>
+                </div>
+            </div>
+        </div>
+        <script src="" async defer></script>
+    </body>
+</html>
